@@ -1,0 +1,26 @@
+[project]
+name = "state-server"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Byron Sakiadis",email = "byron.a.sakiadis@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi (>=0.115.12,<0.116.0)",
+    "shapely (>=2.1.1,<3.0.0)",
+    "uvicorn (>=0.34.3,<0.35.0)",
+    "python-multipart (>=0.0.20,<0.0.21)"
+]
+
+[tool.poetry]
+packages = [{include = "state_server", from = "src"}]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+state-server = "state_server.__main__:main"
