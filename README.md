@@ -2,11 +2,17 @@
 
 A small FastAPI application that tells you which U.S. state (if any) a given latitude/longitude point falls in, based on geoJSON data in `us-states.json`. The app was bundled using Poetry and can be run via a CLI script (`state-server`) or directly with Uvicorn.
 
+This project was originally for an interview with Vistar media, in 2025 with the following prompt:
+We serve up a mound of geospatial data both internally and to third
+parties. What we need is a server to tell us which state, if any, a point is in.
+
+It need not be fast, but the code should be readable, and the results should be
+correct.
+
 ---
 
 ## Table of Contents
 
-0. [FAQs]
 1. [Prerequisites](#prerequisites)
 2. [Project Structure](#project-structure)
 3. [Installation](#installation)
@@ -46,11 +52,10 @@ state-server/
 └── src/
     └── state_server/
         ├── __init__.py
-        ├── app.py       ← FastAPI router + polygon logic
-        └── utils.py     ← helper functions (e.g., point-in-polygon)
+        └── app.py       ← FastAPI router + polygon logic
 ```
 
-* `states.json`
+* `us-states.json`
   Contains an array of objects, each with:
 
   ```jsonc
@@ -93,7 +98,7 @@ state-server/
 4. **Clone this repository** (or download & extract):
 
    ```bash
-   git clone https://github.com/yourusername/state-server.git
+   git clone https://github.com/decimalst/state-server.git
    cd state-server
    ```
 
