@@ -1,11 +1,12 @@
 # State Server
 
-A small FastAPI application that tells you which U.S. state (if any) a given latitude/longitude point falls in, based on a simplified `states.json`. The app was bundled using Poetry and can be run via a CLI script (`state-server`) or directly with Uvicorn.
+A small FastAPI application that tells you which U.S. state (if any) a given latitude/longitude point falls in, based on geoJSON data in `us-states.json`. The app was bundled using Poetry and can be run via a CLI script (`state-server`) or directly with Uvicorn.
 
 ---
 
 ## Table of Contents
 
+0. [FAQs]
 1. [Prerequisites](#prerequisites)
 2. [Project Structure](#project-structure)
 3. [Installation](#installation)
@@ -40,7 +41,7 @@ state-server/
 ├── pyproject.toml
 ├── poetry.lock
 ├── README.md          ← (you are here)
-├── states.json        ← simplified state polygons
+├── files/us-states.json        ← state polygons
 ├── main.py            ← FastAPI app entrypoint
 └── src/
     └── state_server/
@@ -285,3 +286,4 @@ You should get a JSON array of matching state names, for example:
 
 * Thanks to the Vistar team for providing the original `states.json` file and challenge description.
 * Built with [FastAPI](https://fastapi.tiangolo.com/) and [Poetry](https://python-poetry.org/).
+* GeoJSON files taken from blog post [here.](https://eric.clst.org/tech/usgeojson/)
